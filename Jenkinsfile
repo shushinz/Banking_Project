@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         // Install the Maven version configured as "M3" and add it to the path.
-         maven 'maven'
+         maven 'maven-3.6.3'
 
     }
 
@@ -30,8 +30,7 @@ pipeline {
                 sh "docker build -t dprasaddevops/bankapp-eta-app:${BUILD_NUMBER} ."
                 sh 'docker image list'
                 sh "docker tag dprasaddevops/bankapp-eta-app:${BUILD_NUMBER} dprasaddevops/bankapp-eta-app:latest"
-            }
-        }
+            }       }
         stage('Login2DockerHub and Push the Image') {
     steps {
         script {
