@@ -14,8 +14,8 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 // Get some code from a GitHub repository
-                // git 'https://github.com/prasad-gamut/BankingApp1.git'
-		        checkout scm
+                // git 'https://github.com/shushinz/Banking_Project.git'
+		git branch: 'main', url: 'https://github.com/shushinz/Banking_Project.git'
             }
 		}
         stage('Maven Build') {
